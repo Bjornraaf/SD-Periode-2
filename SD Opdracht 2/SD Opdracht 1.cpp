@@ -6,18 +6,18 @@
 
 int main()
 {
-	School mySchool("Mediacollege Amsterdam ", " 06/09/0420 "," Contactweg ", " 9000FU ", " 0669420420");//School wordt aangemaakt met parameters
+	Player player1("Peepeepoopoo ", 12323 ," Contactweg ", " 9000FU ", " 0669420420");//Player wordt aangemaakt met parameters
 
-	std::cout << mySchool.GetName() << std::endl;			//
-	std::cout << mySchool.GetDoE() << std::endl;			//
-	std::cout << mySchool.GetAddress() << std::endl;		// De parameters worden uitgeprint in de console
-	std::cout << mySchool.GetPostalCode() << std::endl;		//
-	std::cout << mySchool.GetPhoneNumber() << std::endl;	//
+	std::cout << "Player Name: " << player1.GetName() << std::endl;
+	std::cout << "Player Coins: " << player1.GetpCoins() << std::endl;
+	std::cout << player1.GetAddress() << std::endl;		// De parameters worden uitgeprint in de console
+	std::cout << player1.GetPostalCode() << std::endl;		//
+	std::cout << player1.GetPhoneNumber() << std::endl;	//
 
-	std::cout << mySchool.GetName() << std::endl;			// Mediacollege Amsterdam
+	std::cout << player1.GetName() << std::endl;			// Mediacollege Amsterdam
 	std::cout << "Has these courses: " << std::endl;		// Has these courses:
 
-	for (Course* c : mySchool.GetCourses())		// Courses worden opgevraagd 
+	for (Course* c : player1.GetCourses())		// Courses worden opgevraagd 
 	{
 		std::cout << c->GetName() << " Estabilished in: " << c->GetDateOfEstablishment() << std::endl; // De namen en DoE van de courses worden uitgeprint
 

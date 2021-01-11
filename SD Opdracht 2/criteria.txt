@@ -1,0 +1,25 @@
+Main:
+- Kan players toevoegen/aanmaken
+- Kan items geven aan players
+- Kan items weghalen van players
+Player:
+- Heeft naam (string)//
+- Heeft coin value (integer)//
+- Heeft inventory array/vector
+- Heeft equipped items array/vector
+- Kan items equippen vanuit de inventory naar de equipped items
+- Item equips mogen moeten gelimiteerd zijn per type
+- Kan equipped items wegschrijven naar console
+Item:
+- Heeft naam (string)
+- Heeft coin value (integer)
+- Heeft typeID (string: weapon/armor/etc)
+- Subclasses voor items voor types
+- Subclasses hebben eigen variabelen
+(dus je hebt subclasses, bijvoorbeeld Weapon en Armor, die inheriten van Item. Elk Item heeft een typeID zodat je door middel van switch(typeID) je de Weapon/Armor kan identificeren.)
+Bonus:
+- Ipv typeID als string heb je typeID als enummerator
+- Player can items kopen/verkopen
+Grote bonus:a
+- Ipv typeID heb je een switch gebasseerd op de subclasses
+- User kan items toevoegen aan players dmv user input during runtime

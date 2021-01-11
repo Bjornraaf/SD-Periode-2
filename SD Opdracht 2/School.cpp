@@ -2,36 +2,36 @@
 #include "Student.h"
 
 
-School::School(std::string aName, std::string aDoE, std::string anAddress, std::string aPC, std::string aPhoneNumber)
+Player::Player(std::string aName, int pCoins, std::string anAddress, std::string aPC, std::string aPhoneNumber)
 {
 	SetName(aName);
-	SetDoE(aDoE);
+	SetpCoins(pCoins);
 	SetAddress(anAddress);				// alles wordt in de constructor gezet
 	SetPostalCode(aPC);
 	SetPhoneNumber(aPhoneNumber);
 	Init();								//init wordt aangeroepen
 }
 
-School::~School()
+Player::~Player()
 {
 }
 
-void School::RemoveCourse(int allCourses)
+void Player::RemoveCourse(int allCourses)
 {
 	courses.erase(courses.begin() + allCourses);	//course verwijderen
 }
 
-void School::AddCourse(Course* aCourse)
+void Player::AddCourse(Course* aCourse)
 {
 	courses.push_back(aCourse);						//course toevoegen
 }
 
-int School::GetAmountOfCourses()
+int Player::GetAmountOfCourses()
 {
 	return courses.size();							//hoeveelheid courses tellen
 }
 
-std::vector<Course*> School::GetCourses()
+std::vector<Course*> Player::GetCourses()
 {
 	return courses;									//courses worden gereturned
 }
@@ -39,58 +39,29 @@ std::vector<Course*> School::GetCourses()
 //hier zijn natuurlijk alle getters en setters en values
 #pragma region getters and setters 
 
-std::string School::GetName()
+std::string Player::GetName()
 {
 	return name;
 }
 
-std::string School::GetDoE()
+int Player::GetpCoins()
 {
-	return dayOfEstablishment;
+	return playerCoins;
+}
 }
 
-std::string School::GetAddress()
-{
-	return address;
-}
-
-std::string School::GetPostalCode()
-{
-	return postalCode;
-}
-
-std::string School::GetPhoneNumber()
-{
-	return phoneNumber;
-}
-
-void School::SetName(std::string aName)
+void Player::SetName(std::string aName)
 {
 	name = aName;
 }
 
-void School::SetDoE(std::string aDoE)
+void Player::SetpCoins(int pCoins)
 {
-	dayOfEstablishment = aDoE;
-}
-
-void School::SetAddress(std::string anAddress)
-{
-	address = anAddress;
-}
-
-void School::SetPostalCode(std::string aPC)
-{
-	postalCode = aPC;
-}
-
-void School::SetPhoneNumber(std::string aPhoneNumber)
-{
-	phoneNumber = aPhoneNumber;
+	playerCoins = pCoins;
 }
 #pragma endregion
 
-void School::Init()
+void Player::Init()
 {
 	Course* aChangedCourse = new Course("New Course", "00/00/2002");
 	aChangedCourse->SetName("Random Course");
